@@ -9,9 +9,9 @@ const userDataList = [
   
 const buttons = document.getElementsByClassName('btn');
 
-buttons.forEach(element => {
-      element.item().addEventListener('click',(event) => {onPrint(event);});
-});
+for(let i = 0 ; i< buttons.length ; i++){
+    buttons.item(i).addEventListener('click', (event) => onPrint(event));
+}
 
 function onPrint(event){
     const btn = event.target;
