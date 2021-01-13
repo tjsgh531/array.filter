@@ -10,15 +10,18 @@ const userDataList = [
 const buttons = document.querySelectorAll('.btn');
 
 buttons.forEach(element => {
-      element.addEventListener('click',onPrint(element));
+      element.addEventListener('click',(event) => {onPrint(event);});
 });
 
 function onPrint(event){
     const btn = event.target;
-    const result = userDataList.filter((data)=>{data.age >= btn.dataset.age});
+    
+    const result = userDataList.filter((data) => data.age >= btn.dataset.age);
     let listHtml = '';
+
     for(const data of result){
-        listHtml += `<li>${data.name}</li>`;
+        listHtml += `<li>${data.name} : ${data.age}</li>`;
     }
+
     document.getElementById('result').innerHTML = listHtml;
 }
