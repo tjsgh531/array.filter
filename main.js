@@ -7,10 +7,10 @@ const userDataList = [
     { name: '기린', age: 56 }
   ];
   
-const buttons = document.querySelectorAll('.btn');
+const buttons = document.getElementsByClassName('btn');
 
 buttons.forEach(element => {
-      element.addEventListener('click',(event) => {onPrint(event);});
+      element.item().addEventListener('click',(event) => {onPrint(event);});
 });
 
 function onPrint(event){
